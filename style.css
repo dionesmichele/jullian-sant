@@ -1,0 +1,44 @@
+/* Navbar inicial */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: top 0.3s ease-in-out;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar.hidden {
+    top: -100px;
+}
+
+.navbar .menu ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar .logo {
+    height: 50px;
+}
+
+/* Outros ajustes */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
