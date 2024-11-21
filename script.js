@@ -12,3 +12,12 @@ window.addEventListener("scroll", () => {
 
     lastScrollTop = scrollTop;
 });
+
+// Seleciona o botão e os itens do menu secundário
+const segundoMenuToggle = document.querySelector('.segundo-menu-toggle');
+const segundoMenuItems = document.querySelector('.segundo-menu-items');
+
+// Adiciona evento de clique ao botão do menu secundário
+segundoMenuToggle.addEventListener('click', () => {
+    segundoMenuItems.classList.toggle('show');
+});
