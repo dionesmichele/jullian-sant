@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- <div class="container"> -->
     <!-- Navbar -->
     <header id="navbar" class="navbar">
         <nav class="menu">
             <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#loja">Loja</a></li>
+                <li><a href="loja.html">Loja</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -51,6 +52,14 @@
                 <h3>Waves</h3>
                 <a href="#">Veja mais</a>
             </div>
+            <div>
+                <h3>Borneo</h3>
+                <a href="#">Veja mais</a>
+            </div>
+            <div>
+                <h3>Floral</h3>
+                <a href="#">Veja mais</a>
+            </div>
         </section>
 
         <!-- Outros Projetos -->
@@ -60,9 +69,37 @@
                 <h3>Pinturas</h3>
                 <a href="#">Veja mais</a>
             </div>
+            <div>
+                <h3>Desenhos</h3>
+                <a href="#">Veja mais</a>
+            </div>
+            <div>
+                <h3>Pinturas</h3>
+                <a href="#">Veja mais</a>
+            </div>
+            <div>
+                <h3>Camisetas e Acessórios</h3>
+                <a href="#">Veja mais</a>
+            </div>
         </section>
     </main>
 
+  <!-- Contato -->
+  <section id="contato" class="section" style="margin-bottom: 30px;">
+    <h2>Envie sua ideia para orçamento</h2>
+    <form action="#" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="ideia">Sua ideia:</label>
+      <textarea id="ideia" name="ideia" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
     <!-- Footer -->
     <footer id="contato">
         <h2>Entre em contato</h2>
@@ -72,160 +109,6 @@
         </ul>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script><!-- </div> -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Interativa</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header id="navbar" class="navbar">
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#loja">Loja</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-     // Sessão Home 
-        <section id="home" class="section">
-            <h1>Bem-vindo ao Meu Portfólio</h1>
-            <p>Descubra meus projetos e trabalhos.</p>
-        </section>
-
-       // Sessão Loja 
-        <section id="loja" class="section">
-            <h2>Loja</h2>
-            <div class="carousel">
-                <img src="img/item1.jpg" alt="Item 1">
-                <img src="img/item2.jpg" alt="Item 2">
-                <img src="img/item3.jpg" alt="Item 3">
-            </div>
-        </section>
-            
-        Sessão Projetos 
-        <section id="projetos" class="section">
-            <h2>Meus Projetos</h2>
-            <div class="project-grid">
-                <div><h3>Tattoos</h3><p>Descrição do projeto.</p></div>
-                <div><h3>Pinturas</h3><p>Descrição do projeto.</p></div>
-                <div><h3>Desenhos</h3><p>Descrição do projeto.</p></div>
-            </div>
-        </section>
-
-        Sessão Contato 
-        <section id="contato" class="section">
-            <h2>Contato</h2>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2024. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html> -->

@@ -2,7 +2,7 @@ let lastScrollTop = 0;
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
         navbar.classList.add("hidden"); // Esconde a navbar
