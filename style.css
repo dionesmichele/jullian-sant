@@ -1,5 +1,3 @@
-
-
 /* Corpo da página */
 body {
     margin: 0;
@@ -29,12 +27,43 @@ body {
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease; /* Transição suave */
 }
+
 /* Logo */
 .navbar .logo {
-    height: 50px; /*altura logo */
+    height: 10px; /*altura logo */
     display: flex;
     align-items: center; /* Centro logo vertical */
-    margin: 5px, 0px, 0px, 0px;
+    /* margin: 5px, 0px, 0px, 0px; */
+}
+
+.logo img{
+    width: 20px;
+}
+/* Menu principal alinhado em linha */
+.primeiro-menu-items,
+.navbar > ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    display: flex; /* Coloca os itens em linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Links do menu principal */
+.primeiro-menu-items li a,
+.navbar > ul li a {
+    color: white; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 600; /* Deixa o texto em negrito */
+    padding: 5px 10px; /* Espaçamento interno */
+    transition: background 0.3s ease; /* Efeito de transição no hover */
+}
+
+.primeiro-menu-items li a:hover,
+.navbar > ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fundo no hover */
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
 /* Menu */
@@ -43,12 +72,10 @@ body {
     align-items: center;
     justify-content: space-between;
     min-width: -webkit-fill-available;
-    display: flex;
     gap: 15px;
     margin: 0;
     padding: 0;
 }
-
 
 .hidden {
     transform: translateY(-100%); /* Oculta a navbar movendo-a para cima */
@@ -56,7 +83,7 @@ body {
 }
 
 /* Ajuste de links */
-.navbar .menu-items ul  {
+.navbar .menu ul {
     list-style: none;
     display: flex;
     gap: 17px;
@@ -70,6 +97,12 @@ body {
     font-weight: 600;
 }
 
+.menu-items {
+    display: flex;
+    list-style: none;
+}
+
+/* Segundo menu (hambúrguer) */
 .segundo-menu-toggle {
     background: none;
     border: none;
@@ -109,6 +142,7 @@ body {
 .segundo-menu-items.show {
     display: flex;
 }
+
 /* Responsividade: Ajustes para telas menores */
 @media (max-width: 768px) {
     .navbar {
@@ -118,10 +152,10 @@ body {
     }
 
     .navbar .logo {
-        margin-top: 100px; /* Adiciona um espaço abaixo da logo */
+        margin-top: 150px; /* Adiciona um espaço abaixo da logo */
     }
 
-    .navbar .menu-items ul {
+    .navbar .menu ul {
         flex-direction: column; /* Empilha os itens do menu verticalmente */
         gap: 10px; /* Reduz o espaço entre os itens do menu */
     }
@@ -143,25 +177,101 @@ section {
     padding: 0px;
 }
 
+.divisor {
+    height: 0.5px;
+    background: #0000003d;
+    margin: 40px auto;
+    width: 70%;
+}
+
 .main .sobre h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;    
+    text-align: center;
+}
+
+.sobre-mim p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 100px;
 }
 
 
 
+/* Seção de tattoos */
 
+.trabalhos {
+    text-align: center; /* Centraliza o título e botão */
+    margin: 40px 0; /* Espaçamento acima e abaixo da seção */
+}
 
+.trabalhos h2,
+.trabalhos h3 {
+    margin-bottom: 20px; /* Espaçamento entre títulos */
+}
 
+.trabalhos .carousel {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Habilita snap das imagens */
+    padding: 10px 0;
+}
 
+.trabalhos .carousel img {
+    width: 300px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
+    object-fit: cover; /* Garante que as imagens se ajustem proporcionalmente */
+    border-radius: 20px; /* Bordas arredondadas para as imagens */
+    flex-shrink: 0; /* Impede que as imagens reduzam no flex */
+    scroll-snap-align: center; /* Centraliza a imagem no carrossel ao parar */
+}
 
+.trabalhos .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6b6a6a68; /* Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
 
+.trabalhos .btn:hover {
+    background-color: #000000; /* Cor de fundo ao passar o mouse */
+    color: rgb(245, 244, 244); /* Cor do texto do botão */
 
+}
 
+.trabalhos .carousel-estilo .tipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
 
+.trabalhos .carousel-estilo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
+}
 
+.trabalhos .carousel-estilo a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    /* background-color: #6b6a6a17; Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
 
 
 

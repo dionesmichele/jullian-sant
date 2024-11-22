@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- <div class="container"> -->
     <!-- Navbar -->
     <header id="navbar" class="navbar">
         <nav class="menu-items">
-            <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo">
-            <ul class="primeiro-menu-items">
-                <li><a href="#home">Home</a></li>
-                <li><a href="loja.html">Loja</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <div>
+              <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo" style="width: 30px">
+            </div>
 
-        <button class="segundo-menu-toggle" aria-label="Abrir Menu Secundário">☰</button>
-        <ul class="segundo-menu-items">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
+            <div>
+                <ul class="primeiro-menu-items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <button class="segundo-menu-toggle" aria-label="Abrir Menu Secundário">☰</button>
+                <ul class="segundo-menu-items">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            
         </nav>
     </header>
 
@@ -41,35 +51,72 @@
         <section id="sobre" class="sobre">
             <h1>Sobre mim</h1>
             <div class="sobre-mim">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <p>Sou o Jullian Sant, apaixonado pela arte da tatuagem e pelas infinitas possibilidades de expressão
+                    que ela oferece.
+                    Nasci em Guarulhos e hoje vivo em São Paulo, cidade que inspira e molda muito o meu trabalho.
+                    A tatuagem entrou na minha vida em um momento em que eu precisava me encontrar, e desde então, ela
+                    tem sido minha alicerce.
+                    Foi através dela que aprendi sobre respeito, amizade, carinho e a importância de se dedicar ao que
+                    se ama.
+                    Cada traço que faço é uma celebração dessas lições e uma busca constante por excelência.
+                    Minha inspiração vem de vários mundos: do realismo detalhado à leveza da arte oriental e à liberdade
+                    criativa do abstrato.
+                    Recentemente, me aprofundei no universo das tatuagens tribais e das culturas ancestrais, buscando
+                    criar uma conexão entre o passado e o presente, o corpo e a arte.
+                    No Estúdio 604, meu objetivo é criar um ambiente acolhedor, onde todos se sintam respeitados e
+                    conectados com a arte e o momento.
+                    Aqui, enquanto traço histórias na pele, também compartilho música, risadas e boas energias, sempre
+                    buscando evolução e mantendo o respeito que a tatuagem e meus clientes merecem.</p>
             </div>
         </section>
+
+        <div class="divisor"></div>
 
         <!-- Trabalhos -->
         <section id="trabalhos" class="trabalhos">
             <h2>Meus Trabalhos</h2>
-            <div class="tattoos">
-                <h3>Tattoos</h3>
-                <a href="#">Veja mais</a>
+            <h3>Tattoos</h3>
+            <div class="carousel">
+                <img src="imagens/florPerna.jpg" alt="Flash 1">
+                <!-- <img src="imagens/letras.jpg" alt="Flash 2">
+                <img src="imagens/realismo.jpg" alt="Flash 3"> -->
+            </div> 
+            <button class="btn">Ver mais</button>
+        </section>
+
+        <div class="divisor"></div>
+
+        <!-- Estilos -->
+        <section id="estilos" class="trabalhos">
+            <h2>Estilos de Tattoo</h2>
+            <div class="carousel-estilo">
+                <div class="tipo">
+                    <h3 class="estilo-tipo">Waves</h3>
+                    <div class="carousel">
+                        <img src="imagens/waves.jpg" alt="Waves 1">
+                    </div>
+                    <a href="veja-mais.html">Veja mais</a>    
+                </div>
+
+                <div class="tipo">
+                    <h3 class="estilo-tipo">Borneo</h3>
+                    <div class="carousel">          
+                        <img src="imagens/borneo.jpg" alt="Borneo 1"> 
+                    </div> 
+                    <a href="veja-mais.html">Veja mais</a> 
+                </div>
+
+                <div class="tipo">
+                 <h3 class="estilo-tipo">Floral</h3>
+                  <div class="carousel">
+                    <img src="imagens/floral.jpg" alt="Floral 1">
+                  </div>
+                 <a href="veja-mais.html">Veja mais</a>
+                </div>
             </div>
         </section>
 
-        <!-- Estilos -->
-        <section id="estilos" class="estilos">
-            <h2>Estilos que domino</h2>
-            <div class="waves">
-                <h3>Waves</h3>
-                <a href="#">Veja mais</a>
-            </div>
-            <div class="borneo">
-                <h3>Borneo</h3>
-                <a href="#">Veja mais</a>
-            </div>
-            <div class="floral">
-                <h3>Floral</h3>
-                <a href="#">Veja mais</a>
-            </div>
-        </section>
+        <div class="divisor"></div>
 
         <!-- Outros Projetos -->
         <section id="outros-projetos" class="outros-projetos">
@@ -93,22 +140,25 @@
         </section>
     </main>
 
-  <!-- Contato -->
-  <section id="contato" class="section" style="margin-bottom: 30px;">
-    <h2>Envie sua ideia para orçamento</h2>
-    <form action="#" method="POST">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+    <div class="divisor"></div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+    <!-- Contato -->
+    <section id="contato" class="section" style="margin-bottom: 30px;">
+        <h2>Envie sua ideia para orçamento</h2>
+        <form action="#" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-      <label for="ideia">Sua ideia:</label>
-      <textarea id="ideia" name="ideia" rows="5" required></textarea>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-  </section>
+            <label for="ideia">Sua ideia:</label>
+            <textarea id="ideia" name="ideia" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
     <!-- Footer -->
     <footer id="contato">
         <h2>Entre em contato</h2>
@@ -120,4 +170,5 @@
 
     <script src="script.js" defer></script><!-- </div> -->
 </body>
+
 </html>
