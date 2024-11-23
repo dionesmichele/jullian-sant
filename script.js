@@ -21,3 +21,24 @@ const segundoMenuItems = document.querySelector('.segundo-menu-items');
 segundoMenuToggle.addEventListener('click', () => {
     segundoMenuItems.classList.toggle('show');
 });
+
+function enviarMensagem(event) {
+    event.preventDefault(); // Impede o envio normal do formulário
+
+    // Coletar os dados do formulário
+    var nome = document.getElementById('nome').value;
+    var ideia = document.getElementById('ideia').value;
+
+    // Codificar os dados para a URL
+    var texto = encodeURIComponent(Olá, meu nome é ${nome}. ${ideia});
+
+    // Número do WhatsApp (substitua pelo número correto)
+    var numeroWhatsApp = "5511348672585"; // Exemplo: +55 (31) 99999-9999
+
+    // Criar o link do WhatsApp com a mensagem
+    var urlWhatsApp = "https://wa.me/${numeroWhatsApp}?text=${texto};"
+
+    // Redirecionar para o link do WhatsApp
+    window.location.href = urlWhatsApp;
+}
+

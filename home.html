@@ -97,7 +97,7 @@
             <div class="carousel-estilo">
                 <div class="tipo">
                     <h3 class="estilo-tipo">Waves</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/waves.jpg" alt="Waves 1">
                     </div>
                     <a href="veja-mais.html">Veja mais</a>
@@ -105,7 +105,7 @@
 
                 <div class="tipo">
                     <h3 class="estilo-tipo">Borneo</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/borneo.jpg" alt="Borneo 1">
                     </div>
                     <a href="veja-mais.html">Veja mais</a>
@@ -113,7 +113,7 @@
 
                 <div class="tipo">
                     <h3 class="estilo-tipo">Floral</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/floral.jpg" alt="Floral 1">
                     </div>
                     <a href="veja-mais.html">Veja mais</a>
@@ -129,15 +129,15 @@
             <div class="carousel-estilo">
                 <div class="tipo">
                     <h3>Flashs</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/flash (2).jpg" alt="Floral 1">
                     </div>
                     <a href="#">Veja mais</a>
                 </div>
-                
+
                 <div class="tipo">
                     <h3>Pinturas</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/pintura.jpg" alt="Floral 1">
                     </div>
                     <a href="#">Veja mais</a>
@@ -145,7 +145,7 @@
 
                 <div class="tipo">
                     <h3>Desenhos</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/flash.jpg" alt="Floral 1">
                     </div>
                     <a href="#">Veja mais</a>
@@ -153,7 +153,7 @@
 
                 <div class="tipo">
                     <h3>Camisetas e Acessórios</h3>
-                    <div class="carousel">
+                    <div class="outros">
                         <img src="imagens/camiseta.jpg" alt="Floral 1">
                     </div>
                     <a href="#">Veja mais</a>
@@ -165,22 +165,44 @@
     <div class="divisor"></div>
 
     <!-- Contato -->
-    <section id="orcamento" class="orcamento" style="margin-bottom: 30px;">
+    <section id="orcamento" class="orcamento">
         <h2>Pensou em alguma ideia que não está aqui ou alguma arte minha falou com voce?
-            <br> Envie para mim e faça um orçamento! </h2>
-        <form action="#" method="POST" class="form">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <br> Envie para mim e faça um orçamento!
+        </h2>
+        <form id="contatoForm" onsubmit="enviarMensagem(event)">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
 
-            <!-- <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required> -->
+            <label for="ideia">Mensagem:</label>
+            <textarea id="ideia" name="mensagem" required></textarea><br><br>
 
-            <label for="ideia">Sua ideia/referencia:</label>
-            <textarea id="ideia" name="ideia" rows="5" required></textarea>
-
-            <button type="submit" class="btn">Enviar</button>
+            <button type="submit" class="btn">Enviar via WhatsApp</button>
         </form>
+
+        <script>
+            function enviarMensagem(event) {
+                event.preventDefault(); // Impede o envio normal do formulário
+
+                // Coletar os dados do formulário
+                var nome = document.getElementById('nome').value;
+                var ideia = document.getElementById('ideia').value;
+
+                // Codificar os dados para a URL
+                var texto = encodeURIComponent(`Olá, meu nome é ${nome}. ${ideia}`);
+
+                // Número do WhatsApp (substitua pelo número correto)
+                var numeroWhatsApp = "5511948672585"; // Exemplo: +55 (31) 99999-9999
+
+                // Criar o link do WhatsApp com a mensagem
+                var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+
+                // Redirecionar para o link do WhatsApp
+                window.location.href = urlWhatsApp;
+            }
+        </script>
+
     </section>
+
 
     <!-- Footer -->
     <footer id="contato">
