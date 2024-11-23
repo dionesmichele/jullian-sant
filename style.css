@@ -204,7 +204,7 @@ section {
 
 .trabalhos {
     text-align: center; /* Centraliza o título e botão */
-    margin: 40px 0; /* Espaçamento acima e abaixo da seção */
+    margin: 40px; /* Espaçamento acima e abaixo da seção */
 }
 
 .trabalhos h2,
@@ -217,7 +217,8 @@ section {
     gap: 10px; /* Espaçamento entre as imagens */
     overflow-x: auto; /* Permite rolagem horizontal */
     scroll-snap-type: x mandatory; /* Habilita snap das imagens */
-    padding: 10px 0;
+    padding: 10px;
+    
 }
 
 .trabalhos .carousel img {
@@ -274,14 +275,21 @@ section {
 }
 
 
-
-
-
-
-
-
-
-
+.orcamento{
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    /* align-items: center; */
+    /* padding-left: 250px; */
+}
+.orcamento .h2{
+    display: flex;
+    text-align: end;
+}
+.form  {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: start; /*  Centraliza os itens na vertical */
+}
 
 /* Rodapé */
 footer {
