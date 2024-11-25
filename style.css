@@ -1,44 +1,388 @@
-/* Navbar inicial */
+/* Corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Evita barras de rolagem horizontais */
+}
+
+/* Container principal */
+.container {
+    width: 90%; /* Ocupa 90% da largura da tela */
+    max-width: 1440px; /* Limite máximo */
+    margin: 0 auto; /* Centraliza */
+}
+
+/* main{
+    display: flex;
+    width: 100%;  Adapta à largura do container 
+    height: auto; 
+    
+    flex-direction: column;
+    align-items: center;
+
+} */
+
 .navbar {
-    position: fixed;
-    top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
-    transition: top 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
     z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease; /* Transição suave */
 }
 
-.navbar.hidden {
-    top: -100px;
-}
-
-.navbar .menu ul {
+/* Logo */
+.navbar .logo {
+    height: 10px; /*altura logo */
     display: flex;
-    gap: 20px;
+    align-items: center; /* Centro logo vertical */
+    /* margin: 5px, 0px, 0px, 0px; */
 }
 
-.navbar .menu ul li a {
-    color: #fff;
+.logo img{
+    width: 20px;
+}
+
+/* Menu principal alinhado em linha */
+.primeiro-menu-items,
+.navbar > ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    display: flex; /* Coloca os itens em linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Links do menu principal */
+.primeiro-menu-items li a,
+.navbar > ul li a {
+    color: white; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 600; /* Deixa o texto em negrito */
+    padding: 5px 10px; /* Espaçamento interno */
+    transition: background 0.3s ease; /* Efeito de transição no hover */
+}
+
+.primeiro-menu-items li a:hover,
+.navbar > ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fundo no hover */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Menu */
+.navbar .menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: -webkit-fill-available;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    transform: translateY(-100%); /* Oculta a navbar movendo-a para cima */
+    transition: transform 0.3s ease; /* Suaviza a animação */
+}
+
+/* Ajuste de links */
+.navbar .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 17px;
+    margin-right: 1px;
+    padding-right: 1px;
+}
+
+.menu-items li a {
+    color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-.navbar .logo {
-    height: 50px;
+.menu-items {
+    display: flex;
+    list-style: none;
 }
 
-/* Outros ajustes */
-body {
+/* Segundo menu (hambúrguer) */
+.segundo-menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.segundo-menu-items {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    padding: 10px;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    display: none; /* Esconde o menu inicialmente */
+    flex-direction: column;
+    gap: 10px;
 }
 
+.segundo-menu-items li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.segundo-menu-items li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Exibe o menu ao ativar */
+.segundo-menu-items.show {
+    display: flex;
+}
+
+/* Responsividade: Ajustes para telas menores */
+@media (max-width: 768px) {
+    .navbar .menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%; /* Ocupa toda a largura da tela */
+    }
+
+    .segundo-menu-items {
+        top: 60px; /* Ajusta a posição do menu secundário */
+        width: 20%; /* Ocupa toda a largura */
+        right: 50px;
+    }
+
+    .segundo-menu-toggle {
+        font-size: 32px; /* Aumenta o tamanho do botão */
+    }
+}
+
+
+/* Banner responsivo */
 .banner img {
+    width: 100%; /* Adapta à largura do container */
+    height: auto; /* Mantém a proporção */
+    max-height: 100vh; /* Não ultrapassa a altura da tela */
+    object-fit: cover; /* Ajusta para cobrir o espaço */
+}
+
+/* Seção geral */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divisor {
+    height: 0.5px;
+    background: #0000003d;
+    margin: 40px auto;
+    width: 70%;
+}
+
+.main .sobre h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sobre-mim p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 20px;
+}
+
+
+
+/* Seção de tattoos */
+
+.trabalhos {
+    text-align: center; /* Centraliza o título e botão */
+    margin: 40px; /* Espaçamento acima e abaixo da seção */
+    padding: 80px;
+}
+
+.trabalhos h2,
+.trabalhos h3 {
+    margin-bottom: 20px; /* Espaçamento entre títulos */
+    font-size: medium;
+}
+
+.trabalhos .carousel {
+    display: flex;
+    gap: 12px; /* Espaçamento entre as imagens */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Habilita snap das imagens */
+    padding: 10px;
+    
+}
+
+.trabalhos .carousel img {
+    width: 100%;
+    max-width: 200px; /* Limita o tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção das imagens */
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+
+.trabalhos .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6b6a6a68; /* Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.trabalhos .btn:hover {
+    background-color: #000000; /* Cor de fundo ao passar o mouse */
+    color: rgb(245, 244, 244); /* Cor do texto do botão */
+
+}
+
+
+.trabalhos .carousel-estilo {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  Espaçamento entre as imagens 
+    padding: 10px; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
     width: 100%;
     height: auto;
+    max-height: 500px;
+}
+
+.trabalhos .carousel-estilo img {
+    width: 80%;
+    max-width: 600px; /* Limita o tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção das imagens */
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.trabalhos .carousel-estilo .tipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}
+
+.trabalhos .carousel-estilo .outros {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    max-width: 300px;
+    min-height: 200px;
+    max-height: 200px;
+}
+
+.trabalhos .carousel-estilo a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    /* background-color: #6b6a6a17; Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+
+.orcamento{
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: start;
+    /* padding-left: 250px; */
+    padding: 20px;
+}
+.orcamento .h2{
+    display: flex;
+    text-align: left ;
+    margin-bottom: 30px ;
+}
+
+.form .contatoForm label {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: start;
+    margin: 10px;
+}
+
+.orcamento .btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #82818168; /* Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.orcamento .btn:hover {
+    background-color: #817e7e; /* Cor de fundo ao passar o mouse */
+    color: rgb(245, 244, 244); /* Cor do texto do botão */
+}
+
+.outros-contatos {
+    display: flex;
+    justify-items: end;
+    align-items: center;
+}
+.outros-contatos ul li{
+    list-style: none;
+    display: flex;
+    padding-right: 1px;
+}
+
+.outros-contatos h2 {
+    display: flex;
+    justify-content: baseline;
+    align-items: end;
+} 
+
+/* Rodapé */
+footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+    padding: 20px;
+    background: #000;
+    color: #fff;
 }

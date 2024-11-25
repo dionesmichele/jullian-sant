@@ -1,117 +1,240 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Meu portfólio: Tattoo e artes plásticas </title>
+    <title>Meu portfólio: Tattoo e Artes Plásticas</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<header id="navbar" class="navbar"> </header>
-<nav class="menu">
-    <ul>
-    <li><a href="#conteudo_formacao">Home</a></li>
-    <li><a href="#conteudo_portfolio">Loja</a></li>
-    <li><a href="#conteudo_contato">Contato</a></li>
-    </ul>
-</nav>
-</header>
-<main class="menu_sobre"> 
-<article id="sobre"> 
-<section>
-    <h1 class="titulo"> Sobre mim</h1>
-</section> 
-<section class="primeiro-paragrafo">
-    <a>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-     Ut tempora dolorem quisquam laborum, voluptates nisi quae recusandae sint dolore iste rem modi aspernatur, 
-     perferendis quidem voluptatibus non quod ipsam mollitia.
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-     Quam aliquid odit exercitationem rem voluptates porro, iusto aspernatur quo esse optio earum, 
-    at tenetur explicabo sunt officia quae veritatis recusandae laudantium.</a>
-</section> 
-</article>
-</main>
+    <!-- <div class="container"> -->
+    <!-- Navbar -->
+    <header id="navbar" class="navbar">
+        <nav class="menu-items">
+            <div>
+                <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo"
+                    style="width: 30px">
+            </div>
 
-<div class="fundo_trabalhos">
-    <h2 class="titulo_formacao">Meus Trabalhos</h2>
-    <article id="conteudo_trabalhos">
-        <section class="info_trabalhos">
-            <h3> Tattoos</h3>
-       <span><a href="#">Trabalhos no Estudio 604</a></span>
-           <p>Descrição</p> 
-        </section> 
-     </article>
-</div>
+            <div>
+                <ul class="primeiro-menu-items">
+                    <li><a href="#index">Home</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
 
+            <div>
+                <button class="segundo-menu-toggle" aria-label="Abrir Menu Secundário">☰</button>
+                <ul class="segundo-menu-items">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
 
-<div class="fundo_estilos">
-    <h2 class="titulo_estilos">Estilos que domino</h2>
-<article id="conteudo_estilos">
-    <section class="info_estilos">
-        <h3> Waves</h3>
-        <span><a href="#">botao de veja mais</a></span>
-    </section> 
-    <section class="info_estilos">
-        <h3> Borneo </h3>
-        <span><a href="#">botao de veja mais</a></span>
-    </section> 
-    <section class="info_estilos">
-        <h3> Floral</h3>
-        <span><a href="#">botao de veja mais</a></span>
-    </section> 
-    </article>
-</div>
+        </nav>
+    </header>
 
-<div class="fundo_outros">
-  <h2 class="titulo_estilos">Outros Projetos</h2>
-<article id="conteudo_outros">
-  <section class="info_outros">
-      <h3> Flashs </h3>
-      <span><a href="#">botao de veja mais</a></span>
-  </section> 
-  <section class="info_outros">
-      <h3> Pinturas </h3>
-      <span><a href="#">botao de veja mais</a></span>
-  </section> 
-  <section class="info_outros">
-      <h3> Desenhos</h3>
-      <span><a href="#">botao de veja mais</a></span>
-  </section> 
-  <section class="info_outros">
-    <h3> Camisetas e Acessórios</h3>
-    <span><a href="#">botao de veja mais</a></span>
-  </section> 
-  </article>
-</div>
-
-<footer id="fundo_rodape">
-<div id="conteudo_contato">
-        <section class="entre-em-contato">
-            <a>Entre em contato</a> 
+    <!-- Main Section -->
+    <main>
+        <!-- Banner -->
+        <section id="home" class="banner">
+            <img src="imagens/header.png" alt="Imagem de destaque com artes e tattoos">
         </section>
-        <section class="rodape_icone">
-            <img class="icone" src="imagens/o-email.png" alt="Icon gmail">
-           <span> <a href="https://tattoosantana@gmail.com"> Email </a> </span> 
-        </section> 
-        <section class="rodape_icone">
-          <img class="icone" src="imagens/o-email.png" alt="Icon instagram">
-         <span> <a href="https://pereiradionesm@gmail.com"> Instagram </a> </span> 
-       </section> 
-       <section class="rodape_icone">
-        <img class="icone" src="imagens/github.png" alt="Icon facebook" >
-        <span> <a href="https://github.com/dionesmichele/Portfolio"> Facebook </a> </span>  
-        </section> 
-        <section class="rodape_icone">
-            <img class="icone" src= "imagens/linkedin.png" alt="Icon estudio">
-           <span> <a href="https://www.linkedin.com/in/michele-diones/"> Estudio 604</a> </span> 
-        </section> 
-</div>
-</footer>
-<script src="script.js"></script>
+
+        <!-- Sobre mim -->
+        <section id="sobre" class="sobre">
+            <h1>Sobre mim</h1>
+            <div class="sobre-mim">
+                <p>Sou o Jullian Sant, apaixonado pela arte da tatuagem e pelas infinitas possibilidades de expressão
+                    que ela oferece.
+                    Nasci em Guarulhos e hoje vivo em São Paulo, cidade que inspira e molda muito o meu trabalho.
+                    A tatuagem entrou na minha vida em um momento em que eu precisava me encontrar, e desde então, ela
+                    tem sido minha alicerce.
+                    Foi através dela que aprendi sobre respeito, amizade, carinho e a importância de se dedicar ao que
+                    se ama.
+                    Cada traço que faço é uma celebração dessas lições e uma busca constante por excelência.
+                    Minha inspiração vem de vários mundos: do realismo detalhado à leveza da arte oriental e à liberdade
+                    criativa do abstrato.
+                    Recentemente, me aprofundei no universo das tatuagens tribais e das culturas ancestrais, buscando
+                    criar uma conexão entre o passado e o presente, o corpo e a arte.
+                    No Estúdio 604, meu objetivo é criar um ambiente acolhedor, onde todos se sintam respeitados e
+                    conectados com a arte e o momento.
+                    Aqui, enquanto traço histórias na pele, também compartilho música, risadas e boas energias, sempre
+                    buscando evolução e mantendo o respeito que a tatuagem e meus clientes merecem.</p>
+            </div>
+        </section>
+
+        <div class="divisor"></div>
+
+        <!-- Trabalhos -->
+        <section id="trabalhos" class="trabalhos">
+            <h2>Meus Trabalhos</h2>
+            <h3>Tattoos</h3>
+            <div class="carousel">
+                <img src="imagens/florPerna.jpg" alt="Flash 1">
+                <img src="imagens/escorp.jpg" alt="Flash 2">
+                <img src="imagens/realismo.jpg" alt="Flash 3">
+                <img src="imagens/costas.jpg" alt="Flash 2">
+                <img src="imagens/aQueda.jpg" alt="Flash 3">
+                <img src="imagens/borboleta.jpg" alt="Flash 3">
+                <img src="imagens/letras.jpg" alt="Flash 3">
+            </div>
+            <button class="btn">Ver mais</button>
+        </section>
+
+        <div class="divisor"></div>
+
+        <!-- Estilos -->
+        <section id="estilos" class="trabalhos">
+            <h2>Estilos de Tattoo</h2>
+            <div class="carousel-estilo">
+                <div class="tipo">
+                    <h3 class="estilo-tipo">Waves</h3>
+                    <div class="outros">
+                        <img src="imagens/waves.jpg" alt="Waves 1">
+                    </div>
+                    <a href="veja-mais.html">Veja mais</a>
+                </div>
+
+                <div class="tipo">
+                    <h3 class="estilo-tipo">Borneo</h3>
+                    <div class="outros">
+                        <img src="imagens/borneo.jpg" alt="Borneo 1">
+                    </div>
+                    <a href="veja-mais.html">Veja mais</a>
+                </div>
+
+                <div class="tipo">
+                    <h3 class="estilo-tipo">Floral</h3>
+                    <div class="outros">
+                        <img src="imagens/floral.jpg" alt="Floral 1">
+                    </div>
+                    <a href="veja-mais.html">Veja mais</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor"></div>
+
+        <!-- Outros Projetos -->
+        <section id="outros-projetos" class="trabalhos">
+            <h2>Outros Projetos</h2>
+            <div class="carousel-estilo">
+                <div class="tipo">
+                    <h3>Flashs</h3>
+                    <div class="outros">
+                        <img src="imagens/flash (2).jpg" alt="Floral 1">
+                    </div>
+                    <a href="#">Veja mais</a>
+                </div>
+
+                <div class="tipo">
+                    <h3>Pinturas</h3>
+                    <div class="outros">
+                        <img src="imagens/pintura.jpg" alt="Floral 1">
+                    </div>
+                    <a href="#">Veja mais</a>
+                </div>
+
+                <div class="tipo">
+                    <h3>Desenhos</h3>
+                    <div class="outros">
+                        <img src="imagens/flash.jpg" alt="Floral 1">
+                    </div>
+                    <a href="#">Veja mais</a>
+                </div>
+
+                <div class="tipo">
+                    <h3>Outros</h3>
+                    <div class="outros">
+                        <img src="imagens/camiseta.jpg" alt="Floral 1">
+                    </div>
+                    <a href="#">Veja mais</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="divisor"></div>
+
+
+    <!-- Footer -->
+    <footer id="contato">
+         <!-- Contato -->
+    <section id="orcamento" class="orcamento">
+        <h2>Pensou em alguma ideia que não está aqui ou alguma arte minha falou com voce?
+        <br> Envie para mim e faça um orçamento!
+        </h2>
+        <form id="contatoForm" onsubmit="enviarMensagem(event)">
+            <label for="nome">Seu nome :</label>
+            <input type="text" id="nome" name="nome" required style="width: 280px;"><br><br>
+
+            <label for="ideia">Mensagem:</label>
+            <textarea id="ideia" name="mensagem" required style="width: 340px; height: 100px;"></textarea><br><br>
+
+            <button type="submit" class="btn">Enviar via WhatsApp</button>
+        </form>
+
+        <script>
+            function enviarMensagem(event) {
+                event.preventDefault(); // Impede o envio normal do formulário
+
+                // Coletar os dados do formulário
+                var nome = document.getElementById('nome').value;
+                var ideia = document.getElementById('ideia').value;
+
+                // Codificar os dados para a URL
+                var texto = encodeURIComponent(`Olá, meu nome é ${nome}. ${ideia}`);
+
+                // Número do WhatsApp (substitua pelo número correto)
+                var numeroWhatsApp = "5511948672585"; // Exemplo: +55 (31) 99999-9999
+
+                // Criar o link do WhatsApp com a mensagem
+                var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+
+                // Redirecionar para o link do WhatsApp
+                window.location.href = urlWhatsApp;
+            }
+        </script>
+
+    </section>
+
+    <section id="outros-contatos" class="outros-contatos">
+        <h2>Entre em contato comigo</h2>
+        <ul>
+            <li>Email: <a href="mailto:tattoosantana@gmail.com">tattoosantana@gmail.com</a></li>
+            <li>WhatsApp: <a href="#">@tattooart</a> +55 11 948672585</li>
+            <li>Behance: <a href="#">@tattooart</a>BEhance</li>
+            <h3>Também me encontra no Estúdio 604 </h3>
+            <li>Instagram: <a href="#">@tattooart</a>Estudio 604</li>
+            <li>WhatsApp 604: <a href="#">@tattooart</a> +55 11 917877057</li>
+            <li>TikTok 604: <a href="#">@tattooart</a>tktk 604</li>
+        </ul>
+    </section>
+
+    <section id="outros-contatos" class="outros-contatos">
+        <h2>Minhas Redes</h2>
+        <ul>
+            <li><a href="#">@tattooart</a>todas as tattoos</li>
+            <li> <a href="#">@tattooart</a>fineline</li>
+            <li><a href="#">@tattooart</a>realismo</li>
+            <li><a href="#">@tattooart</a>black sant</li>
+            <li><a href="#">@tattooart</a>pinturas</li>
+            <li><a href="#">@tattooart</a>desenhos</li>
+
+        </ul>
+    </section>
+       
+    </footer>
+
+    <script src="script.js" defer></script><!-- </div> -->
 </body>
-</html> -->
+
+</html>

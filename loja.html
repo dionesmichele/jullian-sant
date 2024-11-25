@@ -1,39 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu portfólio: Tattoo e Artes Plásticas</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- <div class="container"> -->
   <!-- Navbar -->
-  <header id="navbar" class="navbar">
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li> <!-- Link para a Home -->
-        <li><a href="#flashs">Flashs</a></li>
-        <li><a href="#pinturas">Pinturas</a></li>
-        <li><a href="#desenhos">Desenhos</a></li>
-        <li><a href="#acessorios">Acessórios</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header id="navbar" class="navbar">
+        <nav class="menu-items">
+            <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo" style="width: 30px">
+            <ul class="primeiro-menu-items">
+                <li><a href="index.html">Home</a></li> <!-- Link para a Home -->
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <button class="segundo-menu-toggle" aria-label="Abrir Menu Secundário">☰</button>
+            <ul class="segundo-menu-items">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
 
   <!-- Sessões da Loja -->
   <main>
         <!-- Banner -->
-    <section id="home" class="banner">
+    <section id="loja" class="banner">
         <img src="imagens/flash.jpg" alt="Imagem de destaque com artes e tattoos">
     </section>
+
     <section id="flashs" class="section">
       <h2>Flashs</h2>
       <div class="carousel">
-        <img src="img/flash1.jpg" alt="Flash 1">
-        <img src="img/flash2.jpg" alt="Flash 2">
-        <img src="img/flash3.jpg" alt="Flash 3">
-        <img src="img/flash4.jpg" alt="Flash 4">
+        <img src="imagens//flash2.jpg" alt="Flash 1">
+        <img src="imagens//flash2.jpg" alt="Flash 2">
+        <img src="imagens//flash3.jpg" alt="Flash 3">
+        <img src="imagens//flash4.jpg" alt="Flash 4">
       </div>
       <button class="btn">Ver mais</button>
     </section>
@@ -73,7 +83,7 @@
   </main>
 
   <!-- Contato -->
-  <section id="contato" class="section">
+  <section id="contato" class="section" style="margin-bottom: 30px;" >
     <h2>Envie sua ideia</h2>
     <form action="#" method="POST">
       <label for="nome">Nome:</label>
@@ -93,6 +103,9 @@
   <footer class="footer">
     <p>&copy; 2024 Loja de Arte. Todos os direitos reservados.</p>
     <p>Email: contato@lojadearte.com | Telefone: (11) 99999-9999</p>
+    <li>Instagram: <a href="#">@tattooart</a></li>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
