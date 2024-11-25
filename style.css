@@ -48,6 +48,7 @@ body {
 .logo img{
     width: 20px;
 }
+
 /* Menu principal alinhado em linha */
 .primeiro-menu-items,
 .navbar > ul {
@@ -216,6 +217,7 @@ section {
 .trabalhos {
     text-align: center; /* Centraliza o título e botão */
     margin: 40px; /* Espaçamento acima e abaixo da seção */
+    padding: 80px;
 }
 
 .trabalhos h2,
@@ -226,7 +228,7 @@ section {
 
 .trabalhos .carousel {
     display: flex;
-    gap: 10px; /* Espaçamento entre as imagens */
+    gap: 12px; /* Espaçamento entre as imagens */
     overflow-x: auto; /* Permite rolagem horizontal */
     scroll-snap-type: x mandatory; /* Habilita snap das imagens */
     padding: 10px;
@@ -284,7 +286,7 @@ section {
 
 .trabalhos .carousel-estilo img {
     width: 80%;
-    max-width: 500px; /* Limita o tamanho máximo das imagens */
+    max-width: 600px; /* Limita o tamanho máximo das imagens */
     height: auto; /* Mantém a proporção das imagens */
     object-fit: cover;
     border-radius: 20px;
@@ -324,11 +326,11 @@ section {
     flex-direction: column; /* Empilha os itens verticalmente */
     align-items: start;
     /* padding-left: 250px; */
-    padding: 30px;
+    padding: 20px;
 }
 .orcamento .h2{
     display: flex;
-    text-align: end;
+    text-align: left ;
     margin-bottom: 30px ;
 }
 
@@ -343,7 +345,7 @@ section {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #6b6a6a68; /* Cor de fundo do botão */
+    background-color: #82818168; /* Cor de fundo do botão */
     color: rgb(0, 0, 0); /* Cor do texto do botão */
     border: none;
     border-radius: 10px;
@@ -354,14 +356,32 @@ section {
 }
 
 .orcamento .btn:hover {
-    background-color: #000000; /* Cor de fundo ao passar o mouse */
+    background-color: #817e7e; /* Cor de fundo ao passar o mouse */
     color: rgb(245, 244, 244); /* Cor do texto do botão */
 }
 
+.outros-contatos {
+    display: flex;
+    justify-items: end;
+    align-items: center;
+}
+.outros-contatos ul li{
+    list-style: none;
+    display: flex;
+    padding-right: 1px;
+}
+
+.outros-contatos h2 {
+    display: flex;
+    justify-content: baseline;
+    align-items: end;
+} 
 
 /* Rodapé */
 footer {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
     padding: 20px;
     background: #000;
     color: #fff;
