@@ -1,10 +1,34 @@
 /* Corpo da página */
+/* --- NOVA IDENTIDADE VISUAL (QUIET LUXURY) --- */
+:root {
+    --algodao-cru: #F4F2EE;
+    --cinza-chumbo: #333333;
+    --terra-siena: #C17754;
+    --verde-musgo: #6B705C;
+    --creme-escuro: #EAE6DF;
+}
+
+/* Corpo da página */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     width: 100%;
-    overflow-x: hidden; /* Evita barras de rolagem horizontais */
+    overflow-x: hidden;
+    background-color: var(--algodao-cru);
+    color: var(--cinza-chumbo);
+    position: relative;
+}
+
+/* EFEITO DE GRÃO (NOISE) PARA TEXTURA DE TELA */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.05; 
+    pointer-events: none; 
+    z-index: 9999;
 }
 
 /* Container principal */
@@ -26,7 +50,7 @@ body {
 
 .navbar {
     width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--verde-musgo); /* Fundo claro e ligeiramente transparente */
     position: fixed;
     top: 0;
     z-index: 10;
@@ -34,7 +58,7 @@ body {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease; /* Transição suave */
+    transition: transform 0.3s ease; 
 }
 
 /* Logo */
@@ -60,20 +84,21 @@ body {
     align-items: center; /* Centraliza os itens verticalmente */
 }
 
-/* Links do menu principal */
+/* Links do menu principal */   
 .primeiro-menu-items li a,
-.navbar > ul li a {
-    color: white; /* Cor dos links */
-    text-decoration: none; /* Remove sublinhado */
-    font-weight: 600; /* Deixa o texto em negrito */
-    padding: 5px 10px; /* Espaçamento interno */
-    transition: background 0.3s ease; /* Efeito de transição no hover */
+.navbar > ul li a,
+.menu-items li a {
+    color: var(--cinza-chumbo); /* Texto escuro elegante */
+    text-decoration: none; 
+    font-weight: 600; 
+    padding: 5px 10px; 
+    transition: background 0.3s ease; 
 }
 
 .primeiro-menu-items li a:hover,
 .navbar > ul li a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Fundo no hover */
-    border-radius: 10px; /* Bordas arredondadas */
+    background: var(--creme-escuro); /* Fundo no hover */
+    border-radius: 10px; 
 }
 
 /* Menu */
@@ -102,7 +127,7 @@ body {
 }
 
 .menu-items li a {
-    color: white;
+    color: var(--terra-siena);
     text-decoration: none;
     font-weight: 600;
 }
@@ -112,22 +137,23 @@ body {
     list-style: none;
 }
 
-/* Segundo menu (hambúrguer) */
+/* Botão hambúrguer no telemóvel */
 .segundo-menu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: var(--terra-siena);  
     font-size: 24px;
     cursor: pointer;
     z-index: 11;
 }
 
+/* Menu lateral do telemóvel */
 .segundo-menu-items {
     list-style: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background: rgba(0, 0, 0, 0.9);
+   background: var(--creme-escuro);
     border-radius: 8px;
     padding: 10px;
     margin: 0;
@@ -137,14 +163,14 @@ body {
 }
 
 .segundo-menu-items li a {
-    color: white;
+    color: var(--terra-siena);
     text-decoration: none;
     font-weight: 600;
     padding: 5px 10px;
 }
 
 .segundo-menu-items li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--verde-musgo);
     border-radius: 4px;
 }
 
@@ -174,12 +200,12 @@ body {
 }
 
 
-/* Banner responsivo */
+/* Banner responsivo - Foco no centro */
 .banner img {
-    width: 100%; /* Adapta à largura do container */
-    height: auto; /* Mantém a proporção */
-    max-height: 100vh; /* Não ultrapassa a altura da tela */
-    object-fit: cover; /* Ajusta para cobrir o espaço */
+    width: 100%; 
+    height: 120vh; /* Define uma altura fixa e elegante (70% da tela) */
+    object-fit: cover; /* Cobre o espaço sem distorcer */
+    object-position:  center 75%; /* Garante que o corte foque no meio exato da foto */
 }
 
 /* Seção geral */
@@ -245,28 +271,6 @@ section {
     scroll-snap-align: center;
 }
 
-
-.trabalhos .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #6b6a6a68; /* Cor de fundo do botão */
-    color: rgb(0, 0, 0); /* Cor do texto do botão */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.trabalhos .btn:hover {
-    background-color: #000000; /* Cor de fundo ao passar o mouse */
-    color: rgb(245, 244, 244); /* Cor do texto do botão */
-
-}
-
-
 .trabalhos .carousel-estilo {
     /* display: flex;
     justify-content: center;
@@ -320,6 +324,24 @@ section {
 
 }
 
+.btn, .trabalhos .btn, .orcamento .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--terra-siena); /* Cor de barro/pintura */
+    color: #ffffff; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover, .trabalhos .btn:hover, .orcamento .btn:hover {
+    background-color: var(--verde-musgo); 
+    color: #ffffff; 
+}
 
 .orcamento{
     display: flex;
@@ -341,24 +363,7 @@ section {
     margin: 10px;
 }
 
-.orcamento .btn{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #82818168; /* Cor de fundo do botão */
-    color: rgb(0, 0, 0); /* Cor do texto do botão */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
 
-.orcamento .btn:hover {
-    background-color: #817e7e; /* Cor de fundo ao passar o mouse */
-    color: rgb(245, 244, 244); /* Cor do texto do botão */
-}
 
 .outros-contatos {
     display: flex;
@@ -383,6 +388,6 @@ footer {
     justify-content: space-between;
     text-align: start;
     padding: 20px;
-    background: #000;
-    color: #fff;
+    background: var(--verde-musgo); /* Tom orgânico */
+    color: var(--algodao-cru);
 }
