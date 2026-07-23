@@ -5,237 +5,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu portfólio: Tattoo e Artes Plásticas</title>
+    
     <link rel="stylesheet" href="./style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- <div class="container"> -->
-    <!-- Navbar -->
-    <header id="navbar" class="navbar">
+   <header id="navbar" class="navbar">
         <nav class="menu-items">
             <div>
-                <img src="imagens/logo_tattoo.png" alt="Logo representando tatuagens e artes" class="logo"
-                    style="width: 30px">
+                <img src="imagens/favicon.jpeg" alt="Logo representando tatuagens e artes" class="logo" style="width: 30px; height: 30px;">
             </div>
 
-            <div>
-                <ul class="primeiro-menu-items">
-                    <li><a href="#index">Home</a></li>
+            <!-- Botão do Menu Hambúrguer (Aparece sempre agora!) -->
+            <div style="margin-left: auto;">
+                <button class="segundo-menu-toggle" aria-label="Abrir Menu">☰</button>
+                
+                <!-- Aqui dentro estão TODOS os links do site -->
+                <ul class="segundo-menu-items">
+                    <li><a href="#home">Home</a></li>
                     <li><a href="loja.html">Loja</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#trabalhos">Galeria</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
-
-            <div>
-                <button class="segundo-menu-toggle" aria-label="Abrir Menu Secundário">☰</button>
-                <ul class="segundo-menu-items">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-
         </nav>
     </header>
 
-    <!-- Main Section -->
     <main>
-        <!-- Banner -->
-        <section id="home" class="banner">
-            <img src="imagens/header.png" alt="Imagem de destaque com artes e tattoos">
-        </section>
-
-        <!-- Sobre mim -->
-        <section id="sobre" class="sobre">
-            <h1>Sobre mim</h1>
-            <div class="sobre-mim">
-                <p>Sou o Jullian Sant, apaixonado pela arte e pelas infinitas possibilidades de expressão
-                    que ela oferece.
-                    Nasci em Guarulhos e hoje vivo no interior de São Paulo, cidade que inspira e molda muito o meu trabalho.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nostrum distinctio sed porro unde cupiditate! 
-                    Explicabo, dicta ullam. Odit atque reiciendis iusto architecto animi nihil consequuntur, voluptates earum hic unde.
+        
+        <section id="home" class="hero-editorial container">
+            <div class="hero-texto hidden">
+                <h1>A fluidez da arte<br>em cada traço.</h1>
+                <p>
+                    Sou o Jullian Sant, apaixonado pela arte e pelas infinitas possibilidades de expressão que ela oferece. Nasci em Guarulhos e hoje vivo no interior de São Paulo, cidade que inspira e molda o meu trabalho.
                 </p>
+                <div class="hero-botoes">
+                    <a href="#trabalhos" class="btn btn-outline">Ver Portfólio</a>
+                    <a href="https://ateliejulliansant.netlify.app" class="btn" target="_blank" rel="noopener noreferrer">Conhecer o Curso</a>
+                </div>
+            </div>
+            <div class="hero-imagem hidden">
+                <img src="imagens/novoheader.jpg" alt="Jullian Sant em processo criativo no ateliê">
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre-editorial container hidden">
+            <div class="sobre-titulo">
+                <h2>A essência <br><span>das linguagens artísticas.</span></h2>
+            </div>
+            <div class="sobre-texto">
+                <p>Sou o Jullian Sant, apaixonado pela arte e pelas infinitas possibilidades de expressão que ela oferece. Nasci em Guarulhos e hoje vivo no interior de São Paulo, cidade que inspira e molda muito o meu trabalho.</p>
+                <p>Meu foco é traduzir sentimentos e histórias em formas, explorando as mais diversas linguagens artísticas com uma estética fluida e marcante.</p>
             </div>
         </section>
 
         <div class="divisor"></div>
 
-        <!-- Trabalhos -->
-        <section id="trabalhos" class="trabalhos">
-            <h2>Linguagens Artísticas</h2>
-
-             <!--  Projetos -->
-        <section id="outros-projetos" class="trabalhos">
-            <h2>Meus Projetos</h2>
-            <div class="carousel-estilo">
-                <div class="tipo">
+        <section id="trabalhos" class="projetos-editorial container">
+            <h2 class="hidden">Linguagens Artísticas</h2>
+            
+            <div class="grid-galeria">
+                <div class="cartao-projeto hidden">
+                    <div class="imagem-wrapper">
+                        <img src="imagens/flash (2).jpg" alt="Flashs de Tattoo">
+                    </div>
                     <h3>Flashs</h3>
-                    <div class="outros">
-                        <img src="imagens/flash (2).jpg" alt="Floral 1">
-                    </div>
-                    <a href="#">Veja mais</a>
+                    <a href="#" class="link-discreto">Explorar Coleção ➝</a>
                 </div>
 
-                <div class="tipo">
+                <div class="cartao-projeto hidden">
+                    <div class="imagem-wrapper">
+                        <img src="imagens/pintura.jpg" alt="Pinturas em Tela">
+                    </div>
                     <h3>Pinturas</h3>
-                    <div class="outros">
-                        <img src="imagens/pintura.jpg" alt="Floral 1">
-                    </div>
-                    <a href="#">Veja mais</a>
+                    <a href="#" class="link-discreto">Explorar Coleção ➝</a>
                 </div>
 
-                <div class="tipo">
+                <div class="cartao-projeto hidden">
+                    <div class="imagem-wrapper">
+                        <img src="imagens/flash.jpg" alt="Desenhos">
+                    </div>
                     <h3>Desenhos</h3>
-                    <div class="outros">
-                        <img src="imagens/flash.jpg" alt="Floral 1">
-                    </div>
-                    <a href="#">Veja mais</a>
+                    <a href="#" class="link-discreto">Explorar Coleção ➝</a>
                 </div>
 
-                <div class="tipo">
+                <div class="cartao-projeto hidden">
+                    <div class="imagem-wrapper">
+                        <img src="imagens/camiseta.jpg" alt="Outros Projetos">
+                    </div>
                     <h3>Outros</h3>
-                    <div class="outros">
-                        <img src="imagens/camiseta.jpg" alt="Floral 1">
-                    </div>
-                    <a href="#">Veja mais</a>
+                    <a href="#" class="link-discreto">Explorar Coleção ➝</a>
                 </div>
             </div>
         </section>
 
-
-            <h3>Tattoos</h3>
-            <div class="carousel">
-                <img src="imagens/florPerna.jpg" alt="Flash 1">
-                <img src="imagens/escorp.jpg" alt="Flash 2">
-                <img src="imagens/realismo.jpg" alt="Flash 3">
-                <img src="imagens/costas.jpg" alt="Flash 2">
-                <img src="imagens/aQueda.jpg" alt="Flash 3">
-                <img src="imagens/borboleta.jpg" alt="Flash 3">
-                <img src="imagens/letras.jpg" alt="Flash 3">
-            </div>
-            <button class="btn">Ver mais</button>
-        </section>
-
-        <div class="divisor"></div>
-
-        <!-- Estilos -->
-        <section id="estilos" class="trabalhos">
-            <h2>Estilos de Tattoo</h2>
-            <div class="carousel-estilo">
-                <div class="tipo">
-                    <h3 class="estilo-tipo">Waves</h3>
-                    <div class="outros">
-                        <img src="imagens/waves.jpg" alt="Waves 1">
-                    </div>
-                    <a href="veja-mais.html">Veja mais</a>
-                </div>
-
-                <div class="tipo">
-                    <h3 class="estilo-tipo">Borneo</h3>
-                    <div class="outros">
-                        <img src="imagens/borneo.jpg" alt="Borneo 1">
-                    </div>
-                    <a href="veja-mais.html">Veja mais</a>
-                </div>
-
-                <div class="tipo">
-                    <h3 class="estilo-tipo">Floral</h3>
-                    <div class="outros">
-                        <img src="imagens/floral.jpg" alt="Floral 1">
-                    </div>
-                    <a href="veja-mais.html">Veja mais</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="divisor"></div>
-
-        <!-- FAQ 
-        <section id="faq" class="faq">  
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-item">
-                <h3>Como adquiro algum trabalho seu?</h3>
-                <p> Entre em contato comigo!</p>. 
-                    Podemos negociar ou criar algum em conjunto.</p>
-            </div> 
-            <div class="faq-item">
-                <h3>Qual é o seu estilo de tatuagem?</h3>
-                <p>Eu trabalho com uma variedade de estilos, incluindo realismo, fineline, blackwork e aquarela. 
-                    Posso adaptar meu estilo ao que você deseja.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Como posso agendar uma sessão?</h3>
-                <p>Você pode entrar em contato comigo através do formulário de contato nesta página ou me enviar uma mensagem direta no WhatsApp para agendar sua sessão.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Quanto tempo leva para fazer uma tatuagem?</h3>
-                <p>O tempo necessário depende do tamanho e da complexidade do design. Sessões menores podem levar cerca de 1 a 2 horas, enquanto projetos maiores podem exigir várias sessões.</p>
-            </div>  
-            -->
     </main>
 
     <div class="divisor"></div>
 
-
-    <!-- Footer -->
     <footer id="contato">
-         <!-- Contato -->
-    <section id="orcamento" class="orcamento">
-        <h2>Pensou em alguma ideia que não está aqui ou alguma arte minha falou com voce?
-        <br> Envie para mim e faça um orçamento!
-        </h2>
-        <form id="contatoForm" onsubmit="enviarMensagem(event)">
-            <label for="nome">Seu nome :</label>
-            <input type="text" id="nome" name="nome" required style="width: 280px;"><br><br>
+        <section id="orcamento" class="orcamento">
+            <h2>Pensou em alguma ideia que não está aqui ou alguma arte minha falou com voce?
+            <br> Envie para mim e faça um orçamento!
+            </h2>
+            <form id="contatoForm" onsubmit="enviarMensagem(event)">
+                <label for="nome">Seu nome :</label>
+                <input type="text" id="nome" name="nome" required style="width: 280px;"><br><br>
 
-            <label for="ideia">Mensagem:</label>
-            <textarea id="ideia" name="mensagem" required style="width: 340px; height: 100px;"></textarea><br><br>
+                <label for="ideia">Mensagem:</label>
+                <textarea id="ideia" name="mensagem" required style="width: 340px; height: 100px;"></textarea><br><br>
 
-            <button type="submit" class="btn">Enviar via WhatsApp</button>
-        </form>
+                <button type="submit" class="btn">Enviar via WhatsApp</button>
+            </form>
 
-        <script>
-            function enviarMensagem(event) {
-                event.preventDefault(); // Impede o envio normal do formulário
+            <script>
+                function enviarMensagem(event) {
+                    event.preventDefault(); 
+                    var nome = document.getElementById('nome').value;
+                    var ideia = document.getElementById('ideia').value;
+                    var texto = encodeURIComponent(`Olá, meu nome é ${nome}. ${ideia}`);
+                    var numeroWhatsApp = "5511948672585"; 
+                    var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+                    window.location.href = urlWhatsApp;
+                }
+            </script>
+        </section>
 
-                // Coletar os dados do formulário
-                var nome = document.getElementById('nome').value;
-                var ideia = document.getElementById('ideia').value;
-
-                // Codificar os dados para a URL
-                var texto = encodeURIComponent(`Olá, meu nome é ${nome}. ${ideia}`);
-
-                // Número do WhatsApp (substitua pelo número correto)
-                var numeroWhatsApp = "5511948672585"; // Exemplo: +55 (31) 99999-9999
-
-                // Criar o link do WhatsApp com a mensagem
-                var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-
-                // Redirecionar para o link do WhatsApp
-                window.location.href = urlWhatsApp;
-            }
-        </script>
-
-    </section>
-
-    <section id="outros-contatos" class="outros-contatos">
-        <h2>Entre em contato comigo</h2>
-        <ul>
-            <li>Email: <a href="mailto:tattoosantana@gmail.com">tattoosantana@gmail.com</a></li>
-            <li>WhatsApp: <a href="#">@tattooart</a> +55 11 948672585</li>
-            <li>Behance: <a href="#">@tattooart</a>BEhance</li>
-            <li> <a> href="https://www.instagram.com/julliansant/" target="_blank" rel="noopener noreferrer" style="color: var(--cinza-chumbo); 
-            font-size: 1.8rem; text-decoration: none; transition: color 0.3s;"> 
-            <i class="fa-brands fa-instagram"></i></a>
-            </li>
-        </ul>
-    </section>       
+        <section id="outros-contatos" class="outros-contatos">
+            <h2>Entre em contato comigo</h2>
+            <ul>
+                <li>Email: <a href="mailto:tattoosantana@gmail.com">tattoosantana@gmail.com</a></li>
+                <li>WhatsApp: <a href="#">@tattooart</a> +55 11 948672585</li>
+                <li>Behance: <a href="#">@tattooart</a>BEhance</li>
+                <li>
+                    <a href="https://www.instagram.com/julliansant/" target="_blank" rel="noopener noreferrer" style="color: var(--cinza-chumbo); font-size: 1.8rem; text-decoration: none; transition: color 0.3s;"> 
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>       
     </footer>
 
-    <script src="script.js" defer></script><!-- </div> -->
+    <script src="script.js" defer></script>
 </body>
-
 </html>
