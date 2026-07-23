@@ -1,23 +1,47 @@
+// =========================================================
+// 1. ESCONDER A NAVBAR AO ROLAR PARA BAIXO
+// =========================================================
 let lastScrollTop = 0;
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-    const scrollTop = document.documentElement.scrollTop;
+    const scrollTop = document.documentElement.scrollTop || window.pageYOffset;
 
-    if (scrollTop > lastScrollTop) {
-        navbar.classList.add("hidden"); // Esconde a navbar
+    // Se rolou para baixo e passou de 100px, esconde a navbar
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        navbar.classList.add("esconder-navbar");
     } else {
-        navbar.classList.remove("hidden"); // Mostra a navbar
+        // Se rolou para cima, mostra a navbar
+        navbar.classList.remove("esconder-navbar");
     }
-
     lastScrollTop = scrollTop;
 });
 
-// Seleciona o botão e os itens do menu secundário
+// =========================================================
+// 2. MENU LATERAL (HAMBÚRGUER NO CELULAR)
+// =========================================================
 const segundoMenuToggle = document.querySelector('.segundo-menu-toggle');
 const segundoMenuItems = document.querySelector('.segundo-menu-items');
 
-// Adiciona evento de clique ao botão do menu secundário
 segundoMenuToggle.addEventListener('click', () => {
     segundoMenuItems.classList.toggle('show');
 });
+
+// =========================================================
+// 3. ANIMAÇÕES DE SURGIMENTO (AS FOTOS APARECENDO)
+// =========================================================
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // Quando o elemento entra na tela...
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show'); // Revela o elemento
+            observer.unobserve(entry.target); // Anima apenas uma vez
+        }
+    });
+}, {
+    threshold: 0.15 // Dispara quando 15% do elemento está visível
+});
+
+// Pega todos os elementos invisíveis e manda o observador vigiar
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));

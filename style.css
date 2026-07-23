@@ -1,5 +1,6 @@
-/* Corpo da página */
-/* --- NOVA IDENTIDADE VISUAL (QUIET LUXURY) --- */
+/* ==========================================================================
+   1. VARIÁVEIS E IDENTIDADE VISUAL (QUIET LUXURY)
+   ========================================================================== */
 :root {
     --algodao-cru: #F4F2EE;
     --cinza-chumbo: #333333;
@@ -8,19 +9,26 @@
     --creme-escuro: #EAE6DF;
 }
 
-/* Corpo da página */
-body {
+/* ==========================================================================
+   2. RESET E ESTILOS GLOBAIS
+   ========================================================================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Open Sans', sans-serif;
     width: 100%;
     overflow-x: hidden;
     background-color: var(--algodao-cru);
     color: var(--cinza-chumbo);
     position: relative;
+    line-height: 1.6;
 }
 
-/* EFEITO DE GRÃO (NOISE) PARA TEXTURA DE TELA */
+/* Efeito de Grão (Noise) para textura de tela */
 body::before {
     content: "";
     position: fixed;
@@ -31,363 +39,468 @@ body::before {
     z-index: 9999;
 }
 
-/* Container principal */
-.container {
-    width: 90%; /* Ocupa 90% da largura da tela */
-    max-width: 1440px; /* Limite máximo */
-    margin: 0 auto; /* Centraliza */
+/* Títulos elegantes */
+h1, h2, h3 {
+    font-weight: 400;
 }
 
-/* main{
-    display: flex;
-    width: 100%;  Adapta à largura do container 
-    height: auto; 
-    
-    flex-direction: column;
-    align-items: center;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-} */
+.divisor {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    width: 70%;
+}
 
+/* ==========================================================================
+   3. ANIMAÇÕES DE SCROLL (JAVASCRIPT)
+   ========================================================================== */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   4. NAVBAR (NAVEGAÇÃO)
+   ========================================================================== */
 .navbar {
     width: 100%;
-    background: var(--verde-musgo); /* Fundo claro e ligeiramente transparente */
+    /* Fundo creme translúcido para o efeito blur funcionar perfeitamente */
+    background: var(--verde-musgo); 
     position: fixed;
     top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
+    z-index: 100;
     align-items: center;
+    padding: 1rem 2rem;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease; 
 }
 
-/* Logo */
 .navbar .logo {
-    height: 10px; /*altura logo */
     display: flex;
-    align-items: center; /* Centro logo vertical */
-    /* margin: 5px, 0px, 0px, 0px; */
+    align-items: center;
 }
 
-.logo img{
-    width: 20px;
+.logo img {
+    width: 30px;
 }
 
-/* Menu principal alinhado em linha */
-.primeiro-menu-items,
-.navbar > ul {
-    list-style: none; /* Remove as bolinhas da lista */
-    display: flex; /* Coloca os itens em linha */
-    gap: 20px; /* Espaçamento entre os itens */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove padding padrão */
-    align-items: center; /* Centraliza os itens verticalmente */
+.menu-items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Links do menu principal */   
-.primeiro-menu-items li a,
-.navbar > ul li a,
-.menu-items li a {
-    color: var(--cinza-chumbo); /* Texto escuro elegante */
+/* Esconde os links de PC no celular por padrão */
+.primeiro-menu-items {
+    list-style: none;
+    display: none; 
+    align-items: right;
+    gap: 20px;
+}
+
+/* Classe exclusiva para a navbar subir ao rolar a página */
+.navbar.esconder-navbar {
+    transform: translateY(-100%);
+}
+
+/* Links do menu no computador */
+.primeiro-menu-items li a {
+    color: var(--cinza-chumbo);
     text-decoration: none; 
     font-weight: 600; 
     padding: 5px 10px; 
     transition: background 0.3s ease; 
 }
 
-.primeiro-menu-items li a:hover,
-.navbar > ul li a:hover {
-    background: var(--creme-escuro); /* Fundo no hover */
-    border-radius: 10px; 
+.primeiro-menu-items li a:hover {
+    background: var(--creme-escuro);
+    border-radius: 8px; 
 }
 
-/* Menu */
-.navbar .menu-items {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: -webkit-fill-available;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-}
-
-.hidden {
-    transform: translateY(-100%); /* Oculta a navbar movendo-a para cima */
-    transition: transform 0.3s ease; /* Suaviza a animação */
-}
-
-/* Ajuste de links */
-.navbar .menu ul {
-    list-style: none;
-    display: flex;
-    gap: 17px;
-    margin-right: 1px;
-    padding-right: 1px;
-}
-
-.menu-items li a {
-    color: var(--terra-siena);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.menu-items {
-    display: flex;
-    list-style: none;
-}
-
-/* Botão hambúrguer no telemóvel */
+/* Menu Secundário (Mobile) */
 .segundo-menu-toggle {
     background: none;
     border: none;
-    color: var(--terra-siena);  
-    font-size: 24px;
+    color: var(--cinza-chumbo);
+    font-size: 28px;
     cursor: pointer;
     z-index: 11;
 }
 
-/* Menu lateral do telemóvel */
 .segundo-menu-items {
     list-style: none;
     position: absolute;
     top: 100%;
-    right: 0;
-   background: var(--creme-escuro);
+    right: 2rem;
+    background: var(--creme-escuro);
     border-radius: 8px;
-    padding: 10px;
-    margin: 0;
-    display: none; /* Esconde o menu inicialmente */
+    padding: 15px;
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    align-items: center;
 }
 
-.segundo-menu-items li a {
-    color: var(--terra-siena);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 5px 10px;
-}
-
-.segundo-menu-items li a:hover {
-    background: var(--verde-musgo);
-    border-radius: 4px;
-}
-
-/* Exibe o menu ao ativar */
 .segundo-menu-items.show {
     display: flex;
 }
 
-/* Responsividade: Ajustes para telas menores */
-@media (max-width: 768px) {
-    .navbar .menu-items {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%; /* Ocupa toda a largura da tela */
-    }
-
-    .segundo-menu-items {
-        top: 60px; /* Ajusta a posição do menu secundário */
-        width: 20%; /* Ocupa toda a largura */
-        right: 50px;
-    }
-
-    .segundo-menu-toggle {
-        font-size: 32px; /* Aumenta o tamanho do botão */
-    }
+.segundo-menu-items li a {
+    color: var(--cinza-chumbo);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-
-/* Banner responsivo - Foco no centro */
-.banner img {
-    width: 100%; 
-    height: 120vh; /* Define uma altura fixa e elegante (70% da tela) */
-    object-fit: cover; /* Cobre o espaço sem distorcer */
-    object-position:  center 75%; /* Garante que o corte foque no meio exato da foto */
+/* ==========================================================================
+   5. BOTÕES GLOBAIS
+   ========================================================================== */
+.btn, .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--terra-siena);
+    color: #ffffff; 
+    border: 1px solid var(--terra-siena);
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* Seção geral */
-section {
+.btn:hover, .btn-primary:hover {
+    background-color: var(--verde-musgo); 
+    border-color: var(--verde-musgo);
+    color: #ffffff; 
+}
+
+/* Botão secundário (Transparente com borda) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--terra-siena);
+}
+
+.btn-outline:hover {
+    background-color: var(--verde-musgo);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   6. NOVA SECÇÃO HERO (EDITORIAL SPLIT SCREEN)
+   ========================================================================== */
+.hero-editorial {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 100px; 
+    margin-bottom: 4rem;
+}
+
+.hero-texto {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-texto h1 {
+    font-size: 2.2rem;
+    color: var(--cinza-chumbo);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-texto p {
+    color: var(--cinza-chumbo);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-imagem {
+    width: 100%;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 50vh; 
+    object-fit: cover;
+    object-position: center 75%; 
+    border-radius: 8px; 
+}
+
+/* ==========================================================================
+   7. NOVA SECÇÃO SOBRE (EDITORIAL)
+   ========================================================================== */
+.sobre-editorial {
+    padding: 4rem 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 2rem;
 }
 
-.divisor {
-    height: 0.5px;
-    background: #0000003d;
-    margin: 40px auto;
-    width: 70%;
+.sobre-titulo h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--cinza-chumbo);
 }
 
-.main .sobre h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sobre-titulo span {
+    color: var(--terra-siena);
+    font-style: italic;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--cinza-chumbo);
+}
+
+/* ==========================================================================
+   8. NOVA SECÇÃO DE PROJETOS (GRID GALERIA)
+   ========================================================================== */
+.projetos-editorial {
+    padding: 4rem 1.5rem;
     text-align: center;
 }
 
-.sobre-mim p{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-inline: 20px;
+.projetos-editorial h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--cinza-chumbo);
 }
 
+.grid-galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
 
+.cartao-projeto {
+    text-align: left;
+}
 
-/* Seção de tattoos */
+.imagem-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden; 
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
 
+.imagem-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.cartao-projeto:hover .imagem-wrapper img {
+    transform: scale(1.05); /* Efeito de Zoom elegante */
+}
+
+.cartao-projeto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--cinza-chumbo);
+}
+
+.link-discreto {
+    text-decoration: none;
+    color: var(--terra-siena);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.link-discreto:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   9. TATTOOS (CARROSSEL ANTIGO - MANTIDO CASO USE)
+   ========================================================================== */
 .trabalhos {
-    text-align: center; /* Centraliza o título e botão */
-    margin: 40px; /* Espaçamento acima e abaixo da seção */
-    padding: 80px;
-}
-
-.trabalhos h2,
-.trabalhos h3 {
-    margin-bottom: 20px; /* Espaçamento entre títulos */
-    font-size: medium;
+    text-align: center;
+    padding: 4rem 1.5rem;
 }
 
 .trabalhos .carousel {
     display: flex;
-    gap: 12px; /* Espaçamento entre as imagens */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    scroll-snap-type: x mandatory; /* Habilita snap das imagens */
-    padding: 10px;
-    
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
 }
 
 .trabalhos .carousel img {
     width: 100%;
-    max-width: 200px; /* Limita o tamanho máximo das imagens */
-    height: auto; /* Mantém a proporção das imagens */
+    max-width: 250px;
+    height: 350px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 8px;
     flex-shrink: 0;
     scroll-snap-align: center;
 }
 
-.trabalhos .carousel-estilo {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;  Espaçamento entre as imagens 
-    padding: 10px; */
-
+/* ==========================================================================
+   10. ORÇAMENTO / CONTATO E FOOTER
+   ========================================================================== */
+.orcamento {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    width: 100%;
-    height: auto;
-    max-height: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
 }
 
-.trabalhos .carousel-estilo img {
-    width: 80%;
-    max-width: 600px; /* Limita o tamanho máximo das imagens */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: cover;
-    border-radius: 20px;
-    flex-shrink: 0;
+.orcamento h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
-.trabalhos .carousel-estilo .tipo {
+.contatoForm label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.outros-contatos {
+    padding: 2rem 1.5rem;
+}
+
+.outros-contatos ul {
+    list-style: none;
+}
+
+.outros-contatos ul li {
+    margin-bottom: 10px;
+}
+
+.outros-contatos a {
+    color: var(--terra-siena);
+    text-decoration: none;
+}
+
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4px;
-}
-
-.trabalhos .carousel-estilo .outros {
-    display: flex;
-    justify-content: center;
     text-align: center;
-    gap: 15px;
-    max-width: 300px;
-    min-height: 200px;
-    max-height: 200px;
-}
-
-.trabalhos .carousel-estilo a {
-    margin-top: 20px;
-    padding: 10px 20px;
-    /* background-color: #6b6a6a17; Cor de fundo do botão */
-    color: rgb(0, 0, 0); /* Cor do texto do botão */
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-}
-
-.btn, .trabalhos .btn, .orcamento .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--terra-siena); /* Cor de barro/pintura */
-    color: #ffffff; 
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.btn:hover, .trabalhos .btn:hover, .orcamento .btn:hover {
-    background-color: var(--verde-musgo); 
-    color: #ffffff; 
-}
-
-.orcamento{
-    display: flex;
-    flex-direction: column; /* Empilha os itens verticalmente */
-    align-items: start;
-    /* padding-left: 250px; */
-    padding: 20px;
-}
-.orcamento .h2{
-    display: flex;
-    text-align: left ;
-    margin-bottom: 30px ;
-}
-
-.form .contatoForm label {
-    display: flex;
-    flex-direction: column; /* Empilha os itens verticalmente */
-    align-items: start;
-    margin: 10px;
-}
-
-
-
-.outros-contatos {
-    display: flex;
-    justify-items: end;
-    align-items: center;
-}
-.outros-contatos ul li{
-    list-style: none;
-    display: flex;
-    padding-right: 1px;
-}
-
-.outros-contatos h2 {
-    display: flex;
-    justify-content: baseline;
-    align-items: end;
-} 
-
-/* Rodapé */
-footer {
-    display: flex;
-    justify-content: space-between;
-    text-align: start;
-    padding: 20px;
-    background: var(--verde-musgo); /* Tom orgânico */
+    padding: 2rem;
+    background: var(--verde-musgo);
     color: var(--algodao-cru);
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES (TABLETS E COMPUTADORES)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* Navbar Desktop */
+    .segundo-menu-toggle {
+        display: none; /* Esconde o hambúrguer no PC */
+    }
+    .primeiro-menu-items {
+        display: flex; /* Mostra os links no PC */
+    }
+
+    /* Hero Desktop */
+    .hero-editorial {
+        flex-direction: row;
+        text-align: left;
+        padding-top: 130px;
+        min-height: 85vh;
+    }
+    .hero-texto {
+        flex: 1;
+        text-align: left;
+        padding-right: 3rem;
+    }
+    .hero-texto h1 {
+        font-size: 3.5rem;
+    }
+    .hero-texto p {
+        margin-left: 0;
+    }
+    .hero-botoes {
+        justify-content: flex-start;
+    }
+    .hero-imagem {
+        flex: 1;
+    }
+    .hero-imagem img {
+        height: 70vh;
+        box-shadow: -15px 15px 0px var(--creme-escuro); /* Sombra elegante */
+    }
+
+    /* Sobre Desktop */
+    .sobre-editorial {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6rem 2rem;
+    }
+    .sobre-titulo {
+        flex: 1;
+    }
+    .sobre-titulo h2 {
+        font-size: 3.5rem;
+    }
+    .sobre-texto {
+        flex: 1;
+        padding-left: 3rem;
+        border-left: 1px solid var(--terra-siena);
+    }
+
+    /* Projetos (2 colunas no tablet) */
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    /* Footer Desktop */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Projetos (4 colunas no PC) */
+    .grid-galeria {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+    .imagem-wrapper {
+        height: 450px; 
+    }
 }
